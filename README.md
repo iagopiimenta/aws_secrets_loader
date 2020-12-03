@@ -1,3 +1,6 @@
+![Ruby](https://github.com/iagopiimenta/aws_secrets_loader/workflows/Ruby/badge.svg)
+![Ruby Gem](https://github.com/iagopiimenta/aws_secrets_loader/workflows/Ruby%20Gem/badge.svg)
+
 # AwsSecretsLoader
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/aws_secrets_loader`. To experiment with that code, run `bin/console` for an interactive prompt.
