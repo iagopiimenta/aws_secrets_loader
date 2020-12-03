@@ -1,4 +1,4 @@
-![Ruby](https://github.com/iagopiimenta/aws_secrets_loader/workflows/Ruby/badge.svg)
+![Ruby Specs](https://github.com/iagopiimenta/aws_secrets_loader/workflows/Ruby%20Specs/badge.svg)
 ![Ruby Gem](https://github.com/iagopiimenta/aws_secrets_loader/workflows/Ruby%20Gem/badge.svg)
 
 # AwsSecretsLoader
