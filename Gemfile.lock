@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aws_secrets_loader (0.2.2)
+    aws_secrets_loader (0.2.3)
       aws-sdk-secretsmanager (~> 1.43)
 
 GEM
