@@ -1,5 +1,6 @@
 ![Ruby Specs](https://github.com/iagopiimenta/aws_secrets_loader/workflows/Ruby%20Specs/badge.svg)
 ![Ruby Gem](https://github.com/iagopiimenta/aws_secrets_loader/workflows/Ruby%20Gem/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9d7543daf176ed025a45/maintainability)](https://codeclimate.com/github/iagopiimenta/aws_secrets_loader/maintainability)
 
 # AwsSecretsLoader
 
