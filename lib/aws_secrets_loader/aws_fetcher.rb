@@ -7,17 +7,20 @@ module AwsSecretsLoader
   class AwsFetcher
     class << self
       def load
-        secrets = fetch_secrets
-        add_to_environment(secrets)
+        secret_names.each do |secret_name|
+          secrets = fetch_secrets(secret_name)
+
+          add_to_environment(secrets)
+        end
       end
 
       private
 
-      def fetch_secrets
+      def fetch_secrets(secret_name)
         client = Aws::SecretsManager::Client.new
-        get_secret_value_response = client.get_secret_value(secret_id: secret_name)
+        secret_value = client.get_secret_value(secret_id: secret_name)
 
-        JSON.parse(get_secret_value_response.secret_string)
+        JSON.parse(secret_value.secret_string) rescue { "#{secret_name}"  => secret_value.secret_string }
       end
 
       def add_to_environment(secrets)
@@ -26,8 +29,8 @@ module AwsSecretsLoader
         end
       end
 
-      def secret_name
-        ENV['AWS_SECRET_NAME']
+      def secret_names
+        (ENV['AWS_SECRETS_LOADER'] || ENV['AWS_SECRET_NAME']).split(',')
       end
     end
   end
