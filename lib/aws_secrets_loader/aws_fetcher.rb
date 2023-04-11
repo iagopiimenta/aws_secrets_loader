@@ -30,7 +30,7 @@ module AwsSecretsLoader
       end
 
       def secret_names
-        (ENV['AWS_SECRETS_LOADER'] || ENV['AWS_SECRET_NAME']).split(',')
+        SECRET_NAMES ? SECRET_NAMES.split(',') : []
       end
     end
   end
