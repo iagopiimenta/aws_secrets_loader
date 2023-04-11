@@ -27,7 +27,7 @@ module AwsSecretsLoader
       end
 
       def secret_name
-        ENV['AWS_SECRET_NAME']
+        ENV.fetch('AWS_SECRET_NAME', nil)
       end
     end
   end
