@@ -20,7 +20,7 @@ module AwsSecretsLoader
         client = Aws::SecretsManager::Client.new
         secret_value = client.get_secret_value(secret_id: secret_name)
 
-        JSON.parse(secret_value.secret_string) rescue { "#{secret_name}"  => secret_value.secret_string }
+        valid_json?(secret_value.secret_string) || { secret_name.to_s => secret_value.secret_string }
       end
 
       def add_to_environment(secrets)
@@ -30,7 +30,13 @@ module AwsSecretsLoader
       end
 
       def secret_names
-        SECRET_NAMES ? SECRET_NAMES.split(',') : []
+        ENV['AWS_SECRET_NAME'] ? ENV['AWS_SECRET_NAME'].split(',') : []
+      end
+
+      def valid_json?(string)
+        JSON.parse(string)
+      rescue JSON::ParserError
+        nil
       end
     end
   end
